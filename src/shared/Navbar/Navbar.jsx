@@ -6,7 +6,13 @@ const Navbar = () => {
 
     const links = (
         <>
-            <NavLink>Home</NavLink>
+            <NavLink
+                to='/'
+                className={({isActive}) => 
+                    `${isActive ? 'text-lime-400':'text-black'}`
+                }
+            >
+                Home</NavLink>
             <NavLink>Contact US</NavLink>
             <NavLink>Dashboard</NavLink>
             <NavLink>Our Menu</NavLink>
