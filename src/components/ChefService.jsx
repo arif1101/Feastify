@@ -1,7 +1,7 @@
 import React from 'react';
 // import chefService from '../../public/home/chef-service.jpg'
 
-const FeatureSection = () => {
+const ChefService = () => {
     return (
         <div className="mt-[74px] mb-[74px] bg-[url('../../public/home/chef-service.jpg')] bg-cover bg-center lg:px-[112px] py-[120px]">
             <div className='bg-yellow-100 text-center py-[97px]'>
@@ -12,4 +12,4 @@ const FeatureSection = () => {
     );
 };
 
-export default FeatureSection;
+export default ChefService;
