@@ -1,11 +1,11 @@
 import React from 'react';
 import Banner from '../../components/Banner';
 import CategoryFood from '../../components/CategoryFood';
-import FeatureSection from '../../components/ChefService';
 import PopularMenu from '../../components/PopularMenu';
 import ContactNumber from '../../components/ContactNumber';
 import ChefService from '../../components/ChefService';
 import ChefRecomends from '../../components/ChefRecomends';
+import Feature from '../../components/Feature';
 
 const Home = () => {
     return (
@@ -16,6 +16,7 @@ const Home = () => {
           <PopularMenu></PopularMenu>
           <ContactNumber></ContactNumber>
           <ChefRecomends></ChefRecomends>
+          <Feature></Feature>
         </div>
     );
 };
