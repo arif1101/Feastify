@@ -12,10 +12,16 @@ const Navbar = () => {
                     `${isActive ? 'text-lime-400':'text-black'}`
                 }
             >
-                Home</NavLink>
+            Home</NavLink>
             <NavLink>Contact US</NavLink>
             <NavLink>Dashboard</NavLink>
-            <NavLink>Our Menu</NavLink>
+            <NavLink
+                to='/menu'
+                className={({isActive}) => 
+                    `${isActive ? 'text-lime-400':'text-black'}`
+                }
+            >
+            My Menu</NavLink>
             <NavLink>Our Shop</NavLink>
         </>
     )
@@ -50,7 +56,7 @@ const Navbar = () => {
                 
                 <div className='flex flex-col'>
                     <h1 className="text-[22px] lg:text-[32px] font-bold"><span className='text-[rgb(217,153,4)]'>T</span>he<span className='text-[rgb(217,153,4)]'>D</span>aily<span className='text-[rgb(217,153,4)]'>D</span>ish</h1>
-                    <h1 className="text-[13px] lg:text-[24px] tracking-[6.5px] text-slate-500">RESTAURENT</h1>
+                    <h1 className="text-[13px]  tracking-[14px] text-sblack">RESTAURENT</h1>
                 </div>
                 
                 
