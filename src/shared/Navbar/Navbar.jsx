@@ -22,7 +22,12 @@ const Navbar = () => {
                 }
             >
             My Menu</NavLink>
-            <NavLink>Our Shop</NavLink>
+            <NavLink
+                to='/orderFood'
+                className={({isActive}) =>
+                    `${isActive ? 'text-lime-400':'text-black'}`
+                }
+            >Order Food</NavLink>
         </>
     )
     
