@@ -23,11 +23,11 @@ const Navbar = () => {
             >
             My Menu</NavLink>
             <NavLink
-                to='/orderFood'
+                to='/order/salad'
                 className={({isActive}) =>
                     `${isActive ? 'text-lime-400':'text-black'}`
                 }
-            >Order Food</NavLink>
+            >Order</NavLink>
         </>
     )
     

@@ -10,9 +10,9 @@ const PizzaMenu = () => {
     const pizzaMenu = menu.filter((item) => item.category === 'pizza')
     
     return (
-        <div>
-            <HeroMenu heroImg={pizzaHeroImg} size={'500'}></HeroMenu>
-            <Menu menu={pizzaMenu} btnText={"ORDER YOUR FAVOURITE PIZZA"}></Menu>
+        <div className='lg:flex flex-col lg:gap-[106px]'>
+            <HeroMenu title={'pizza'} heroImg={pizzaHeroImg} size={'500'}></HeroMenu>
+            <Menu menu={pizzaMenu} title={'pizza'} btnText={"ORDER YOUR FAVOURITE PIZZA"}></Menu>
         </div>
     );
 };

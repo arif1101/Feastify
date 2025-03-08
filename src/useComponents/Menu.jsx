@@ -1,8 +1,8 @@
 import React from 'react';
 import MenuItem from '../shared/MenuItem/MenuItem';
-import SectionTitle from './SectionTitle';
+import { Link } from 'react-router-dom';
 
-const Menu = ({menu, btnText}) => {
+const Menu = ({menu, title, btnText}) => {
     return (
         <div className='flex flex-col gap-6'>
 
@@ -12,9 +12,8 @@ const Menu = ({menu, btnText}) => {
                 }
             </div>
 
-            <div className='w-[236px] h-[64px] flex text-[20px] items-center justify-center border rounded-xl border-b-[5px] border-yellow-600 mx-auto mt-[24px] btn bg-white'>
-                <h1>{btnText}</h1>
-            </div>
+            <Link to={`/order/${title}`}>
+            <h1 className='w-[236px] h-[64px] flex text-[20px] items-center justify-center border rounded-xl border-b-[5px] border-yellow-600 mx-auto mt-[24px] btn bg-white'>{btnText}</h1></Link>
             
         </div>
     );
