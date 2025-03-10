@@ -6,7 +6,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 const MainLayout = () => {
 
     const location = useLocation();
-    console.log(location);
     const isLogin = location.pathname === '/login'
     const isRegister = location.pathname === '/register'
     

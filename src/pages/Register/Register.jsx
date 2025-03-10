@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import bg_login_img from "../../../public/others/authentication2.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
 const Register = () => {
+  const navigate = useNavigate()
+  const {createUser, updateUserProfile} = useContext(AuthContext)
 
     const handleRegister = (e) => {
         e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result => {
+          updateUserProfile({displayName: name})
+          .then(() => {
+            navigate('/')
+          })
+        })
+        .catch((error) => {
+          alert(error)
+        })
     }
-    
     
     return (
         <div className='bg-[url("/others/authentication.png")] w-screen fixed left-0 h-screen flex items-center justify-center'>
