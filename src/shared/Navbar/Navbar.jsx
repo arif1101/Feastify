@@ -1,8 +1,36 @@
-import React from 'react';
-import {NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import {Link, NavLink, useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+    const navigate = useNavigate()
+    const {user,logOutUser} = useContext(AuthContext)
+    const notify = () => 
+        toast.success("Successfully logged out", {
+          position: "top-center",  // Use a valid position
+          autoClose: 3000,        // Auto close in 3s
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            backgroundColor: "white",
+            color: "red",           // White text
+          }
+        });
+    
+    const handleLogOut = () => {
+        logOutUser()
+        .then(() => {
+            notify()
+            navigate('/')
 
+        })
+        .catch(() => {
+
+        })
+    }
 
     const links = (
         <>
@@ -67,9 +95,6 @@ const Navbar = () => {
                 
             </div>
             {/* end logo  */}
-
-
-
             
             {/* start cart and profile  */}
             <div className=" flex gap-[24px]">
@@ -108,28 +133,36 @@ const Navbar = () => {
                 {/* end cart  */}
 
                 {/* start authentication  */}
-                <NavLink to='/login'><button className='text-[20px] font-semibold'>login</button></NavLink>
-                <div className="dropdown dropdown-end">                
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                        <img
-                            alt="Tailwind CSS Navbar component"
-                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
+                {
+                    user? <>
+                        <div className="dropdown dropdown-end">                
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                                </li>
+                                <li>Settings</li>
+                                <li><NavLink onClick={handleLogOut}>Logout</NavLink></li>
+
+                            </ul>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>
-                        <a className="justify-between">
-                            Profile
-                            <span className="badge">New</span>
-                        </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                    </> : <>
+                        <NavLink to='/login'><button className='text-[20px] font-semibold'>login</button></NavLink>
+                    </>
+                }
+
+
                 {/* end authentication  */}
             </div>
         </div>

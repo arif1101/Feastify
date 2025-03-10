@@ -1,8 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import bg_login_img from "../../../public/others/authentication2.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import { toast } from "react-toastify";
 
 export default function LoginWithCaptcha() {
+
+  const {loginUser} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const from = location.state || '/';
+  const notify = () => 
+    toast.success("Successfully logged in", {
+      position: "top-center",  // Use a valid position
+      autoClose: 3000,        // Auto close in 3s
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        backgroundColor: "white", // Green background
+        color: "green",           // White text
+      }
+    });
+  
+  
   const generateCaptcha = () => {
     return Math.random().toString(36).substring(2, 8).toUpperCase();
   };
@@ -27,7 +48,14 @@ export default function LoginWithCaptcha() {
     const email = form.email.value;
     const password = form.password.value;
     if(captcha === input)
-        alert('login succesfull')
+        loginUser(email, password)
+          .then(result => {
+            notify()
+            navigate(from)
+          })
+          .catch(() => {
+
+          })
     else{
         alert('error')
     }

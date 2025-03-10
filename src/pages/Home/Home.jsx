@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Banner from '../../components/Banner';
 import CategoryFood from '../../components/CategoryFood';
 import PopularMenu from '../../components/PopularMenu';
@@ -6,8 +6,12 @@ import ContactNumber from '../../components/ContactNumber';
 import ChefService from '../../components/ChefService';
 import ChefRecomends from '../../components/ChefRecomends';
 import Feature from '../../components/Feature';
+import AuthContext from '../../context/AuthContext';
 
 const Home = () => {
+  const {user} = useContext(AuthContext)
+  console.log(user)
+  
     return (
         <div>
           <Banner></Banner>
