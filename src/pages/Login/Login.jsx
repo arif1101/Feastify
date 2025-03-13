@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import bg_login_img from "../../../public/others/authentication2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,10 @@ export default function LoginWithCaptcha() {
 
   const {loginUser} = useContext(AuthContext)
   const navigate = useNavigate()
-  const from = location.state || '/';
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
+  console.log(location)
+
   const notify = () => 
     toast.success("Successfully logged in", {
       position: "top-center",  // Use a valid position
@@ -42,7 +45,7 @@ export default function LoginWithCaptcha() {
     }
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = e => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -51,7 +54,7 @@ export default function LoginWithCaptcha() {
         loginUser(email, password)
           .then(result => {
             notify()
-            navigate(from)
+            navigate(from, {replace: true})
           })
           .catch(() => {
 

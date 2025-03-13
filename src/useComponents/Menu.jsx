@@ -12,7 +12,7 @@ const Menu = ({menu, title, btnText}) => {
                 }
             </div>
 
-            <Link to={`/order/${title}`}>
+            <Link to={title==='menu'?'/menu' : `/order/${title}`}>
             <h1 className='w-[236px] h-[64px] flex text-[20px] items-center justify-center border rounded-xl border-b-[5px] border-yellow-600 mx-auto mt-[24px] btn bg-white'>{btnText}</h1></Link>
             
         </div>

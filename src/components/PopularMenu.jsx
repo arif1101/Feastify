@@ -9,7 +9,7 @@ const PopularMenu = () => {
     return (
         <div>
             <SectionTitle title={"FROM OUR MENU"} subTitle={"---Check it out---"}></SectionTitle>
-            <Menu menu={popularMenu}></Menu>
+            <Menu menu={popularMenu} title={'menu'} btnText={'VIEW FULL MENU'}></Menu>
         </div>
 
     );
