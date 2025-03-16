@@ -73,7 +73,7 @@ const Navbar = () => {
     )
     
     return (
-        <div className="max-w-screen-xl navbar justify-between bg-white bg-opacity-30 lg:px-[55px] fixed z-10">
+        <div className="max-w-screen-xl navbar justify-between bg-white border-b lg:px-[55px] fixed z-10">
             {/* logo  */}
             <div className="flex items-center lg:items-start">
 

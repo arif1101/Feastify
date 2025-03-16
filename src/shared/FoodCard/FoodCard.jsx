@@ -12,8 +12,8 @@ const FoodCard = ({item}) => {
     const location = useLocation();
     const [, refetch] = useCart();
 
-    const notify = () => 
-        toast.success("sign in first to add cart", {
+    const notify = (msg) => 
+        toast.success(msg, {
           position: "top-center",  // Use a valid position
           autoClose: 3000,        // Auto close in 3s
           hideProgressBar: false,
@@ -39,6 +39,9 @@ const FoodCard = ({item}) => {
             }
             axios.post('http://localhost:5000/carts', cartItem)
             .then(res => {
+                if(res.data.insertedId){
+                    notify('add to your cart')
+                }
                 refetch()
             })
         }
