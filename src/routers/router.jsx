@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Contact from "../pages/Contact/Contact";
+import MyCart from "../pages/MyCart/MyCart";
 
   const router = createBrowserRouter([
     {
@@ -49,7 +50,13 @@ import Contact from "../pages/Contact/Contact";
     },
     {
       path: "/dashboard",
-      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children: [
+        {
+          path: '/dashboard/myCart',
+          element: <MyCart></MyCart>
+        }
+      ]
     }
   ]);
 
