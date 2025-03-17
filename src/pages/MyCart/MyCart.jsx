@@ -2,10 +2,41 @@ import React from "react";
 import { FaTrash } from "react-icons/fa"; // Import delete icon
 import useCart from "../../useComponents/useCart";
 import SectionTitle from "../../useComponents/SectionTitle";
+import useAxiosSecure from "../../useComponents/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
-  const [cart] = useCart()
+  const [cart, refetch] = useCart()
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const axiosSecure = useAxiosSecure()
+
+  const handleDelete = (id) => {
+    console.log(id)
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            axiosSecure.delete(`/carts/${id}`)
+            .then(res => {
+                if(res.data.deletedCount > 0){
+                    refetch()
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                }
+            })
+
+        }
+      });
+  }
 
   return (
     <div className="w-full max-w-[992px] mx-auto py-12">
@@ -47,7 +78,7 @@ const MyCart = () => {
               <td className="p-2 border">{item.name}</td>
               <td className="p-2 border">${item.price.toFixed(2)}</td>
               <td className="p-2 border text-center">
-                <button className="bg-red-600 text-white p-2 rounded">
+                <button onClick={() => handleDelete(item._id)} className="bg-red-600 text-white p-2 rounded">
                   <FaTrash />
                 </button>
               </td>
