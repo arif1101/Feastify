@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import bg_login_img from "../../../public/others/authentication2.png";
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
+// for testing to push github
 const Register = () => {
   const navigate = useNavigate()
   const {createUser, updateUserProfile} = useContext(AuthContext)
