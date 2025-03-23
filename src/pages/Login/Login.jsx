@@ -3,6 +3,7 @@ import bg_login_img from "../../../public/others/authentication2.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { toast } from "react-toastify";
+import SocialLogin from "./SocialLogin";
 
 export default function LoginWithCaptcha() {
 
@@ -15,7 +16,7 @@ export default function LoginWithCaptcha() {
   const notify = () => 
     toast.success("Successfully logged in", {
       position: "top-center",  // Use a valid position
-      autoClose: 3000,        // Auto close in 3s
+      autoClose: 1000,        // Auto close in 1s
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -65,12 +66,13 @@ export default function LoginWithCaptcha() {
 
   };
 
+
   return (
     <div className='bg-[url("/others/authentication.png")] w-screen fixed left-0 h-screen flex items-center justify-center'>
       <div>
         <img className='max-w-[648px] lg:w-[648px]' src={bg_login_img} alt="Login Background" />
       </div>
-      <form onSubmit={handleLogin} className="w-[536px] p-6 shadow-lg rounded-lg flex flex-col items-center justify-around">
+      <form onSubmit={handleLogin} className="w-[536px] p-6 shadow-xl rounded-lg flex flex-col items-center justify-around">
         <label className="mr-auto text-lg font-semibold">Email</label>
         <input
         name="email"
@@ -120,6 +122,9 @@ export default function LoginWithCaptcha() {
         <div className=" w-full flex flex-col items-center mt-6">
             <p className="text-yellow-600">New here?<Link to='/register'><span className="text-xl font-bold "> Create a New Account</span></Link></p>
             <p>Or sign in with</p>
+            <div className="mt-4">
+              <SocialLogin></SocialLogin>
+            </div>
 
         </div>
       </form>

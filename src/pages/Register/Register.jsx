@@ -3,7 +3,7 @@ import bg_login_img from "../../../public/others/authentication2.png";
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import useAxiosPublic from '../../useComponents/useAxiosPublic';
-import axios from 'axios';
+
 
 const Register = () => {
   const axiosPublic = useAxiosPublic()
