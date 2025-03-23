@@ -47,7 +47,7 @@ const MyCart = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">Total orders: {cart.length}</h2>
         <h2 className="text-lg font-bold">
-          Total price: ${totalPrice.toFixed(2)}
+          Total price:{totalPrice.toFixed(2)}TK
         </h2>
         <button className="bg-yellow-500 text-white px-4 py-2 rounded">
           Pay

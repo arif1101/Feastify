@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import bg_login_img from "../../../public/others/authentication2.png";
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
-// for testing to push github
+import useAxiosPublic from '../../useComponents/useAxiosPublic';
+import axios from 'axios';
+
 const Register = () => {
+  const axiosPublic = useAxiosPublic()
   const navigate = useNavigate()
   const {createUser, updateUserProfile} = useContext(AuthContext)
 
@@ -18,7 +21,17 @@ const Register = () => {
         .then(result => {
           updateUserProfile({displayName: name})
           .then(() => {
-            navigate('/')
+            const userInfo = {
+              name: name,
+              email: email
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res => {
+              if(res.data.insertedId){
+                // notify()
+                navigate('/')
+              }
+            })
           })
         })
         .catch((error) => {
