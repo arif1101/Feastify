@@ -3,10 +3,11 @@ import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { MdAddBox, MdManageAccounts, MdLibraryBooks, MdPeople } from "react-icons/md";
 import { IoHomeSharp, IoFastFood, IoCartSharp, IoMail } from "react-icons/io5";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUsers } from "react-icons/fa";
 
 const SideBar = () => {
   // Close drawer only on mobile & tablet screens
+  const isAdmin = true;
   const closeDrawer = () => {
     if (window.innerWidth < 1024) {
       document.getElementById("my-drawer-2").checked = false;
@@ -15,6 +16,13 @@ const SideBar = () => {
 
   const links = (
     <>
+    {
+      isAdmin ? <>
+      <p className="flex gap-3 items-center">
+        <FaUsers className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/users" onClick={closeDrawer}>All Users  </NavLink>
+      </p>
+      </> : <>
       <p className="flex gap-3 items-center">
         <AiFillHome className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/home" onClick={closeDrawer}>ADMIN HOME</NavLink>
@@ -44,6 +52,8 @@ const SideBar = () => {
         <MdPeople className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/allUsers" onClick={closeDrawer}>ALL USERS</NavLink>
       </p>
+      </>
+    }
 
       <div className="mt-6 mb-6 w-full border-[1px]"></div>
 

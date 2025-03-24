@@ -4,6 +4,9 @@ import { Outlet } from 'react-router-dom';
 import SideBar from '../shared/Navbar/SideBar';
 
 const Dashboard = () => {
+
+    // const isAdmin = true;
+    
     return (
         <div>
             <ToastContainer></ToastContainer>
