@@ -68,7 +68,7 @@ export default function LoginWithCaptcha() {
 
 
   return (
-    <div className='bg-[url("/others/authentication.png")] w-screen fixed left-0 h-screen flex items-center justify-center'>
+    <div className='bg-[url("/others/authentication.png")] w-screen fixed overflow-y-scroll left-0 h-screen flex items-center justify-center'>
       <div>
         <img className='max-w-[648px] lg:w-[648px]' src={bg_login_img} alt="Login Background" />
       </div>

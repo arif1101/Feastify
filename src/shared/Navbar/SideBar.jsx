@@ -4,10 +4,11 @@ import { AiFillHome } from "react-icons/ai";
 import { MdAddBox, MdManageAccounts, MdLibraryBooks, MdPeople } from "react-icons/md";
 import { IoHomeSharp, IoFastFood, IoCartSharp, IoMail } from "react-icons/io5";
 import { FaShoppingCart, FaUsers } from "react-icons/fa";
+import useAdmin from "../../useComponents/useAdmin";
 
 const SideBar = () => {
   // Close drawer only on mobile & tablet screens
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
   const closeDrawer = () => {
     if (window.innerWidth < 1024) {
       document.getElementById("my-drawer-2").checked = false;
