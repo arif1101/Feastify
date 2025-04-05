@@ -23,6 +23,10 @@ const SideBar = () => {
         <FaUsers className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/users" onClick={closeDrawer}>All Users  </NavLink>
       </p>
+      <p className="flex gap-3 items-center">
+        <FaUsers className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/addItem" onClick={closeDrawer}>Add Item</NavLink>
+      </p>
       </> : <>
       <p className="flex gap-3 items-center">
         <AiFillHome className="w-[24px] h-[24px]" />
