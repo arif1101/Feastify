@@ -22,7 +22,7 @@ const Navbar = () => {
             backgroundColor: "white",
             color: "red",           // White text
           }
-        });
+    });
     
     const handleLogOut = () => {
         logOutUser()
