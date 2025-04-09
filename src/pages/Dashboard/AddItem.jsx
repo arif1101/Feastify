@@ -54,46 +54,59 @@ const AddItem = () => {
     }
   
     return (
-        <div className='px-24 py-11 w-full'>
+    <div className='px-24 py-11 w-full'>
+    <div className='text-center mb-8'>
+        <p className='text-sm text-yellow-500 italic'>---What's new?---</p>
+        <h2 className='text-3xl font-semibold border-t border-b py-4 w-fit mx-auto'>ADD AN ITEM</h2>
+    </div>
 
-            <div className='w-full'>
-                <form onSubmit={handleSubmit(onSubmit)} className='w-full'>
-                    {/* name  */}
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend">name</legend>
-                        <input {...register("name")} type="text" className="input" placeholder="Type here" />
-                    </fieldset>
-                    <div className='flex border items-center justify-between w-full'>
-                    {/* category  */}
-                    <select {...register("category")}
-                        className='select select-bordere w-full max-w-xs'>
-                        <option disabled selected="female">select a category</option>
-                        <option value="salad">Salad</option>
-                        <option value="pizza">Pizza</option>
-                        <option value="soup">Soup</option>
-                        <option value="dessert">Dessert</option>
-                        <option value="drinks">Drinks</option>
-                    </select>
-                    {/* price  */}
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend">Price</legend>
-                        <input {...register("price")} type="number" className="input" placeholder="set price" />
-                    </fieldset>
-                    </div>
-                    {/* description  */}
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend">Food Description</legend>
-                        <textarea {...register("recipe")} className="textarea h-24" placeholder="Bio"></textarea>
-                    </fieldset>
-                    {/* fiel input  */}
-                    <div>
-                    <input {...register('image')} type="file" className="file-input file-input-ghost" />
-                    </div>
-                    <button className='btn'>Add Itme</button>
+    <div className='bg-gray-100 p-10 rounded max-w-4xl mx-auto w-full'>
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
 
-                </form>
+        {/* Recipe Name */}
+        <div>
+            <label className='block mb-1 font-semibold'>Recipe name*</label>
+            <input {...register("name")} type="text" placeholder="Recipe name" className="input input-bordered w-full" />
+        </div>
+
+        {/* Category and Price */}
+        <div className='flex flex-col md:flex-row gap-4'>
+            <div className='flex-1'>
+            <label className='block mb-1 font-semibold'>Category*</label>
+            <select {...register("category")} className='select select-bordered w-full'>
+                <option disabled selected>Category</option>
+                <option value="salad">Salad</option>
+                <option value="pizza">Pizza</option>
+                <option value="soup">Soup</option>
+                <option value="dessert">Dessert</option>
+                <option value="drinks">Drinks</option>
+            </select>
+            </div>
+            <div className='flex-1'>
+            <label className='block mb-1 font-semibold'>Price*</label>
+            <input {...register("price")} type="number" placeholder="Price" className="input input-bordered w-full" />
             </div>
         </div>
+
+        {/* Recipe Details */}
+        <div>
+            <label className='block mb-1 font-semibold'>Recipe Details*</label>
+            <textarea {...register("recipe")} placeholder="Recipe Details" className="textarea textarea-bordered w-full h-32" />
+        </div>
+
+        {/* Image Upload */}
+        <div>
+            <input {...register('image')} type="file" className="file-input file-input-bordered w-full max-w-xs" />
+        </div>
+
+        {/* Submit Button */}
+        <button className='btn bg-yellow-600 text-white hover:bg-yellow-700'>
+            Add Item 🍴
+        </button>
+        </form>
+    </div>
+    </div>
+
     )
 };
 
