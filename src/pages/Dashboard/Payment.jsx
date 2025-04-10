@@ -11,7 +11,7 @@ const Payment = () => {
     return (
         <div className='py-24 w-full'>
             <SectionTitle title={"payment"} subTitle={'---pay for eat---'}></SectionTitle>
-            <div>
+            <div className='w-96 mx-auto bg-orange-200 py-3 px-6'>
                 <Elements stripe={stripePromise}>
                     <CheckoutForm></CheckoutForm>
                 </Elements>
