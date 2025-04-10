@@ -4,6 +4,7 @@ import useCart from "../../useComponents/useCart";
 import SectionTitle from "../../useComponents/SectionTitle";
 import useAxiosSecure from "../../useComponents/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
   const [cart, refetch] = useCart()
@@ -49,9 +50,17 @@ const MyCart = () => {
         <h2 className="text-lg font-bold">
           Total price:{totalPrice.toFixed(2)}TK
         </h2>
-        <button className="bg-yellow-500 text-white px-4 py-2 rounded">
-          Pay
-        </button>
+        {
+          cart.length ? 
+          <Link to='/dashboard/payment'>
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded">
+            Pay
+            </button>
+          </Link> : 
+            <button disabled className="bg-slate-300 text-white px-4 py-2 rounded">
+            Pay
+            </button>
+        }
       </div>
 
       {/* Table Section */}
