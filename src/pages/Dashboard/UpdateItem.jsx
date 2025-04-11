@@ -25,7 +25,7 @@ const UpdateItem = () => {
         backgroundColor: "white",
         color: "green",
         },
-    });
+    })
 
     const onSubmit = async (data) => {
         try {

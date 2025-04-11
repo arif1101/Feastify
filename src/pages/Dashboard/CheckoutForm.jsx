@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useCart from '../../useComponents/useCart';
 import useAxiosSecure from '../../useComponents/useAxiosSecure';
 import AuthContext from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 const CheckoutForm = () => {
     const {user} = useContext(AuthContext)
@@ -12,15 +13,31 @@ const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
     const [error, setError] = useState()
-    const [cart] = useCart()
+    const [cart,refetch] = useCart()
     const totalPrice = cart.reduce((total, item) => total+item.price, 0)
 
-    useEffect(()=> {
-        axiosSecure.post('/create-payment-intent', {price: totalPrice})
-        .then(res => {
-            console.log(res.data.clientSecret)
-            setClientSecret(res.data.clientSecret)
+    const notify = () =>
+        toast.success("payment successful", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            style: {
+            backgroundColor: "white",
+            color: "green",
+            },
         })
+
+    useEffect(()=> {
+        if(totalPrice > 0){
+            axiosSecure.post('/create-payment-intent', {price: totalPrice})
+            .then(res => {
+                console.log(res.data.clientSecret)
+                setClientSecret(res.data.clientSecret)
+            })
+        }
     },[axiosSecure,totalPrice])
     
     const handleSubmit = async (event) => {
@@ -79,7 +96,14 @@ const CheckoutForm = () => {
                     status: 'pending'
                 }
                 const res = await axiosSecure.post('/payment', payment)
-                console.log('payment info post : ',res)
+                console.log('payment saved : ',res.data)
+                // console.log("payment result : ",res.data.paymentResult)
+                // console.log('payment countedId : ', res.data.paymentResult.insertedId)
+                if(res.data?.paymentResult?.insertedId){
+                    notify()
+                }
+                refetch()
+
             }
         }
     }

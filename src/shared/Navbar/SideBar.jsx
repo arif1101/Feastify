@@ -43,6 +43,11 @@ const SideBar = () => {
       </p>
 
       <p className="flex gap-3 items-center">
+        <MdAddBox className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/paymentHistory" onClick={closeDrawer}>PAYMENT HISTORY</NavLink>
+      </p>
+
+      <p className="flex gap-3 items-center">
         <FaShoppingCart className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/myCart" onClick={closeDrawer}>MY CART</NavLink>
       </p>
