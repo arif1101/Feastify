@@ -25,7 +25,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      {/* Social Links */}
+      {/*-- Social Links-- */}
       <div>
         <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
         <div className="flex justify-center md:justify-start gap-4 text-lg">
