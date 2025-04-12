@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { MdAddBox, MdManageAccounts, MdLibraryBooks, MdPeople } from "react-icons/md";
+import { MdAddBox, MdManageAccounts, MdLibraryBooks, MdPeople, MdAddCircle, MdFastfood } from "react-icons/md";
 import { IoHomeSharp, IoFastFood, IoCartSharp, IoMail } from "react-icons/io5";
-import { FaShoppingCart, FaUsers } from "react-icons/fa";
+import { FaCalendarCheck, FaShoppingCart, FaUsers } from "react-icons/fa";
 import useAdmin from "../../useComponents/useAdmin";
+import { HiHome } from "react-icons/hi";
 
 const SideBar = () => {
   // Close drawer only on mobile & tablet screens
@@ -19,19 +20,30 @@ const SideBar = () => {
     <>
     {
       isAdmin ? <>
+      {/* admin nav  */}
+      <p className="flex gap-3 items-center">
+        <HiHome className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard" onClick={closeDrawer}>ADMIN HOME</NavLink>
+      </p>
+      <p className="flex gap-3 items-center">
+        <MdAddCircle className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/addItem" onClick={closeDrawer}>ADD ITEMS</NavLink>
+      </p>
+      <p className="flex gap-3 items-center">
+        <FaCalendarCheck className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/users" onClick={closeDrawer}>MANAGE BOOKING</NavLink>
+      </p>
+      <p className="flex gap-3 items-center">
+        <MdFastfood className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/manageItems" onClick={closeDrawer}>MANAGE ITEMS</NavLink>
+      </p>
       <p className="flex gap-3 items-center">
         <FaUsers className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/users" onClick={closeDrawer}>All Users  </NavLink>
       </p>
-      <p className="flex gap-3 items-center">
-        <FaUsers className="w-[24px] h-[24px]" />
-        <NavLink to="/dashboard/addItem" onClick={closeDrawer}>Add Item</NavLink>
-      </p>
-      <p className="flex gap-3 items-center">
-        <FaUsers className="w-[24px] h-[24px]" />
-        <NavLink to="/dashboard/manageItems" onClick={closeDrawer}>Manage Items</NavLink>
-      </p>
       </> : <>
+
+      {/* user nav */}
       <p className="flex gap-3 items-center">
         <AiFillHome className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/home" onClick={closeDrawer}>ADMIN HOME</NavLink>
