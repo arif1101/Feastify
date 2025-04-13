@@ -9,6 +9,7 @@ const Navbar = () => {
     const navigate = useNavigate()
     const {user,logOutUser} = useContext(AuthContext)
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const photoURL = user?.photoURL;
 
     const notify = () => 
         toast.success("Successfully logged out", {
@@ -152,9 +153,21 @@ const Navbar = () => {
                         <div className="dropdown dropdown-end">                
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                
+                                {user && user.photoURL ? (
+                                    <img
+                                    src={photoURL}
+                                    alt="User"
+                                    className="w-10 h-10 rounded-full"
+                                    />
+                                    
+                                ) : (
+                                    <div className="avatar">
+                                    <div className="w-12">
+                                      <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
+                                    </div>
+                                )}
                                 </div>
                             </div>
                             <ul

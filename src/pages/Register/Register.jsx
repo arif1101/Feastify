@@ -16,14 +16,16 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const photoURL = form.photoURL.value;
 
         createUser(email, password)
         .then(result => {
-          updateUserProfile({displayName: name})
+          updateUserProfile({displayName: name, photoURL: photoURL})
           .then(() => {
             const userInfo = {
               name: name,
-              email: email
+              email: email,
+              photoURL: photoURL
             }
             axiosPublic.post('/users', userInfo)
             .then(res => {
@@ -69,6 +71,15 @@ const Register = () => {
           name="password"
             type="password"
             placeholder="Password"
+            className="w-full p-3 mb-4 border rounded text-lg"
+            required
+          />
+
+          <label className="mr-auto text-lg font-semibold">PhotoURL</label>
+          <input
+            name="photoURL"
+            type="URL"
+            placeholder="photoURL"
             className="w-full p-3 mb-4 border rounded text-lg"
             required
           />

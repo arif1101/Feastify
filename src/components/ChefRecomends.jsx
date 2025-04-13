@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RecomendItem from './RecomendItem';
+import SectionTitle from '../useComponents/SectionTitle';
 
 const ChefRecomends = () => {
     const [chefRecomend,setChefRecomend] = useState([])
@@ -13,14 +14,11 @@ const ChefRecomends = () => {
     }, [])
 
     return (
-        <div className='mt-[130px] '>
-            <div className='flex flex-col items-center gap-5 lg:mt-20 mb-[48px]'>
-                <p className='text-[20px] text-yellow-500'>---Should Try---</p>
-                <div className='border w-[424px] mx-auto'></div>
-                <h1 className='text-[40px]'>CHEF RECOMMENDS</h1>
-                <div className='border w-[424px] mx-auto'></div>
+        <div className='mt-10 md:mt-[130px] '>
+            <div className='flex flex-col items-center gap-5 lg:mt-20 md:mb-[48px]'>
+                <SectionTitle title={'CHEF RECOMMENDS'} subTitle={'---Should Try---'}></SectionTitle>
             </div>
-        <div className='md:flex gap-6'>
+        <div className='gap-3 flex flex-col md:flex-row md:gap-6'>
             {
                 chefRecomend.map((item,index) => (
                     <RecomendItem key={index} item={item}></RecomendItem>

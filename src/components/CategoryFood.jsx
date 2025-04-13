@@ -21,10 +21,10 @@ const sliders = [
 const CategoryFood = () => {
     return (
         <div className=''>
-            <div className='flex flex-col items-center gap-5 mb-5 lg:mt-20'>
-                <p className='text-[20px] text-yellow-500'>---From 11:00am to 10:00pm--</p>
+            <div className='flex flex-col items-center gap-3 md:gap-5 mb-5 lg:mt-20'>
+                <p className='mg:text-[20px] text-yellow-500'>---From 11:00am to 10:00pm--</p>
                 <div className='border w-[424px] mx-auto'></div>
-                <h1 className='text-[40px]'>ORDER ONLINE</h1>
+                <h1 className='text-3xl md:text-[40px]'>ORDER ONLINE</h1>
                 <div className='border w-[424px] mx-auto'></div>
             </div>
             

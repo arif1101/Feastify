@@ -9,7 +9,7 @@ import AuthContext from '../../context/AuthContext';
 
 const Home = () => {
     return (
-        <div>
+        <div className='px-3'>
           <Banner></Banner>
           <CategoryFood></CategoryFood>
           <ChefService></ChefService>

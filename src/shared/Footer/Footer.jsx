@@ -3,46 +3,36 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-<div className="bg-yellow-700 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-  <footer className="text-white py-10 px-4">
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-      {/* Company Info */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">The Daily Dish</h2>
-        <p className="text-sm leading-6">
-          Serving delicious meals daily with love and care. Come dine with us and enjoy!
-        </p>
-      </div>
+    <div className="relative left-1/2 -ml-[50vw] w-screen text-white">
+      {/* Top Footer Section with 2 Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
+        
+        {/* Left Section (Contact Info) */}
+        <div className="bg-[#1E293B] py-10 px-4 flex flex-col items-end lg:pr-[158px]">
+          <h3 className="text-lg font-bold mb-3">CONTACT US</h3>
+          <p className="text-sm">123 ABS Street, Uni 21, Bangladesh</p>
+          <p className="text-sm mt-1">+88 123456789</p>
+          <p className="text-sm mt-1">Mon - Fri: 08:00 - 22:00</p>
+          <p className="text-sm">Sat - Sun: 10:00 - 23:00</p>
+        </div>
 
-      {/* Quick Links */}
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-        <ul className="space-y-2 text-sm">
-          <li><a href="/" className="hover:underline">Home</a></li>
-          <li><a href="/menu" className="hover:underline">Menu</a></li>
-          <li><a href="/dashboard" className="hover:underline">Dashboard</a></li>
-          <li><a href="/contact" className="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-
-      {/*-- Social Links-- */}
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-        <div className="flex justify-center md:justify-start gap-4 text-lg">
-          <a href="#"><FaFacebookF className="hover:text-orange-200" /></a>
-          <a href="#"><FaInstagram className="hover:text-orange-200" /></a>
-          <a href="#"><FaTwitter className="hover:text-orange-200" /></a>
-          <a href="#"><FaLinkedinIn className="hover:text-orange-200" /></a>
+        {/* Right Section (Social Links) */}
+        <div className="bg-[#0F172B] py-10 px-4 flex flex-col items-start lg:pl-[158px]">
+          <h3 className="text-lg font-bold mb-3">Follow US</h3>
+          <p className="text-sm mb-4">Join us on social media</p>
+          <div className="flex justify-center md:justify-start gap-5 text-xl">
+            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="#" aria-label="Instagram"><FaInstagram /></a>
+            <a href="#" aria-label="Twitter"><FaTwitter /></a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
 
-  {/* Bottom Bar */}
-  <div className="text-center text-sm text-orange-100 pb-5">
-    &copy; {new Date().getFullYear()} The Daily Dish. All rights reserved.
-  </div>
-</div>
+      {/* Bottom Bar */}
+      <div className="bg-[#0A0A0A] py-3 text-center text-sm text-gray-300">
+        &copy; {new Date().getFullYear()} CulinaryCloud. All rights reserved.
+      </div>
+    </div>
 
 )};
 
