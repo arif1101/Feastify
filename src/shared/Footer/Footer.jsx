@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <div className="relative left-1/2 -ml-[50vw] w-screen text-white">
+    <div className="relative left-1/2 -ml-[50vw] w-screen mt-10 md:mt-[74px] text-white">
       {/* Top Footer Section with 2 Columns */}
       <div className="grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
         

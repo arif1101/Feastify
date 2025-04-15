@@ -26,8 +26,10 @@ const Dashboard = () => {
         <div>
             <ToastContainer></ToastContainer>
             <div className='flex w-screen left-0 absolute'>
-            <SideBar></SideBar>
-            <Outlet></Outlet>
+                <div className='md:flex w-full'>
+                <SideBar></SideBar>
+                <Outlet></Outlet>
+                </div>
             </div>
 
         </div>

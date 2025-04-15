@@ -1,0 +1,10 @@
+@keyframes rainbowPulse {
+    0% { background-color: #f87171; }
+    25% { background-color: #facc15; }
+    50% { background-color: #34d399; }
+    75% { background-color: #60a5fa; }
+    100% { background-color: #f87171; }
+  }
+  .animate-rainbowPulse {
+    animation: rainbowPulse 4s infinite;
+  }

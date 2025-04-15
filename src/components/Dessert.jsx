@@ -9,9 +9,9 @@ const Dessert = () => {
     const desertMenu = menu.filter((item) => item.category === 'dessert')
 
     return (
-        <div className='lg:flex flex-col lg:gap-[106px]'>
+        <div className='flex flex-col gap-10 lg:gap-[106px]'>
             <HeroMenu title={'dessert'} heroImg={desertImage} size={'500'}></HeroMenu>
-            <Menu menu={desertMenu} title={'dessert'} btnText={'ORDER YOUR FAVOURITE FOOD'}></Menu>
+            <Menu menu={desertMenu} title={'dessert'} btnText={'FAVOURITE FOOD'}></Menu>
         </div>
     );
 };

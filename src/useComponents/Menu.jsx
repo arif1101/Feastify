@@ -13,7 +13,7 @@ const Menu = ({menu, title, btnText}) => {
             </div>
 
             <Link to={title==='menu'?'/menu' : `/order/${title}`}>
-            <h1 className='w-[150px] md:w-[236px] md:h-[64px] flex md:text-[20px] items-center justify-center border rounded-xl border-b-[5px] border-yellow-600 mx-auto md:mt-[24px] btn bg-white'>{btnText}</h1></Link>
+            <h1 className='max-w-[236px] md:h-[64px] flex md:text-[20px] items-center justify-center border rounded-xl border-b-[5px] border-yellow-600 mx-auto md:mt-[24px] btn bg-white'>{btnText}</h1></Link>
             
         </div>
     );

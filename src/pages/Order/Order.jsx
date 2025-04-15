@@ -21,11 +21,11 @@ const Order = () => {
     const drinkMenu = menu.filter((item) => item.category==='drinks')
     
     return (
-        <div className='flex flex-col gap-[130px]'>
+        <div className='flex px-3 flex-col gap-[130px]'>
             <HeroMenu heroImg={orderFoodImg} size={'800'}></HeroMenu>
             {/* category food */}
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} className="">
-            <TabList className="flex justify-center gap-[58px] text-[24px] mb-[48px]">
+            <TabList className="flex justify-between px-2 md:justify-center md:gap-[58px] text-[24px] mb-[48px]">
                 {categories.map((item, index) => (
                 <Tab
                     key={index}
@@ -38,42 +38,42 @@ const Order = () => {
                 ))}
             </TabList>
 
-      <TabPanel>
-        <div className='grid grid-cols-[auto_auto_auto] justify-between gap-3'>
-        {
-            saladMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
-        }
-        </div>
-      </TabPanel>
-      <TabPanel>
-      <div className='grid grid-cols-[auto_auto_auto] justify-between gap-3'>
-        {
-            pizzaMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
-        }
-        </div>
-      </TabPanel>
-      <TabPanel>
-      <div className='grid grid-cols-[auto_auto_auto] justify-between gap-3'>
-        {
-            soupMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
-        }
-        </div>
-      </TabPanel>
-      <TabPanel>
-      <div className='grid grid-cols-[auto_auto_auto] justify-between gap-3'>
-        {
-            dessertMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
-        }
-        </div>
-      </TabPanel>
-      <TabPanel>
-      <div className='grid grid-cols-[auto_auto_auto] justify-between gap-3'>
-        {
-            drinkMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
-        }
-        </div>
-      </TabPanel>
-    </Tabs>
+            <TabPanel>
+              <div className='grid md:grid-cols-[auto_auto_auto] justify-between gap-3'>
+              {
+                  saladMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
+              }
+              </div>
+            </TabPanel>
+            <TabPanel>
+            <div className='grid md:grid-cols-[auto_auto_auto] justify-between gap-3'>
+              {
+                  pizzaMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
+              }
+              </div>
+            </TabPanel>
+            <TabPanel>
+            <div className='grid md:grid-cols-[auto_auto_auto] justify-between gap-3'>
+              {
+                  soupMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
+              }
+              </div>
+            </TabPanel>
+            <TabPanel>
+            <div className='grid md:grid-cols-[auto_auto_auto] justify-between gap-3'>
+              {
+                  dessertMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
+              }
+              </div>
+            </TabPanel>
+            <TabPanel>
+            <div className='grid md:grid-cols-[auto_auto_auto] justify-between gap-3'>
+              {
+                  drinkMenu.map((item,index) => <FoodCard key={index} item={item}></FoodCard>)
+              }
+              </div>
+            </TabPanel>
+          </Tabs>
         </div>
     );
 };

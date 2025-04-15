@@ -54,7 +54,7 @@ const AddItem = () => {
     }
   
     return (
-    <div className='px-24 py-11 w-full'>
+    <div className='px-3 md:px-24 md:py-11 w-full'>
     <div className='text-center mb-8'>
         <p className='text-sm text-yellow-500 italic'>---What's new?---</p>
         <h2 className='text-3xl font-semibold border-t border-b py-4 w-fit mx-auto'>ADD AN ITEM</h2>

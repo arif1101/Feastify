@@ -13,6 +13,7 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     const provider = new GoogleAuthProvider();
     const axiosPublic = useAxiosPublic()
+    const userPhotoURL=user?.photoURL
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -69,7 +70,8 @@ const AuthProvider = ({children}) => {
         loginUser,
         logInWithGoogle,
         logOutUser,
-        updateUserProfile
+        updateUserProfile,
+        userPhotoURL
     }
     return (
         <AuthContext.Provider value={authInfo}>

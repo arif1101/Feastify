@@ -10,7 +10,7 @@ const DayOffer = () => {
     return (
         <div>
             <SectionTitle title={"TODAY'S OFFER"} subTitle={"---Don't miss---"}></SectionTitle>
-            <Menu menu={dayMenu} btnText={'ORDER YOUR FAVOURITE FOOD'}></Menu>
+            <Menu menu={dayMenu} btnText={'FAVOURITE FOOD'}></Menu>
         </div>
     );
 };

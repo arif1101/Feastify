@@ -40,13 +40,13 @@ const MyCart = () => {
   }
 
   return (
-    <div className="w-full max-w-[992px] mx-auto py-12">
+    <div className="px-3 w-full max-w-[992px] mx-auto md:py-12">
         <SectionTitle title={'WANNA ADD MORE?'} subTitle={'---My Cart---'}></SectionTitle>
         
-    <div className="p-[50px]">
+    <div className="md:p-[50px]">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-bold">Total orders: {cart.length}</h2>
+        <h2 className="text-lg font-bold"><span className="hidden">Total</span> Orders: {cart.length}</h2>
         <h2 className="text-lg font-bold">
           Total price:{totalPrice.toFixed(2)}TK
         </h2>

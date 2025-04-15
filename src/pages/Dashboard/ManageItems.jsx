@@ -37,9 +37,9 @@ const ManageItems = () => {
     }
     
   return (
-    <div className="w-full border border-blue-500 py-14">
+    <div className="w-full px-3 mb-10 md:py-14">
         <SectionTitle title={'Manage All Items'} subTitle={'---hurry up!---'}></SectionTitle>
-        <div className='py-[50px] px-20'>
+        <div className='md:py-[50px] md:px-20'>
             <h2 className="text-2xl font-semibold mb-6">
             TOTAL ITEMS: <span className="font-bold">{menu.length}</span>
             </h2>

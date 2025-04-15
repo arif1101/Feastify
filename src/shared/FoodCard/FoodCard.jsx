@@ -52,14 +52,14 @@ const FoodCard = ({item}) => {
     }
     
     return (
-        <div className='border max-w-[424px] pb-[52px] flex flex-col gap-8'>
-        <div className='w-full h-[300px] overflow-hidden'>
+        <div className='border max-w-[424px] pb-10 md:pb-[52px] flex flex-col gap-3 md:gap-8'>
+        <div className='w-full h-[200px] md:h-[300px] overflow-hidden'>
         <img className='w-full h-full object-cover' src={item.image} alt="" />
         </div>
-        <div className='px-[40px] flex flex-col items-center gap-6'>
+        <div className='px-[40px] flex flex-col items-center gap-3 md:gap-6'>
             <h1 className='text-[24px]'>{item.name}</h1>
             <p className='text-[16px]'>{item.recipe}</p>
-            <button onClick={addToCart} className='w-[196px] h-[64px] btn border border-b-[5px] border-yellow-600 rounded-xl'>ADD TO CART</button>
+            <button onClick={addToCart} className='max-w-[196px] md:w-[196px] md:h-[64px] btn border border-b-[5px] border-yellow-600 rounded-xl'>ADD TO CART</button>
         </div>
     </div>
     );

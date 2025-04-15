@@ -20,7 +20,7 @@ const PaymentHistory = () => {
     //     return <p className="text-center text-xl my-10">Loading...</p>;
     // }
     return (
-        <div className="w-full my-24 px-4 md:px-10">
+        <div className="w-full md:my-24 px-4 md:px-10">
           <SectionTitle title="---At a Glance!---" subTitle="Payment History" />
     
           <h2 className="text-2xl font-semibold mt-10 mb-4">

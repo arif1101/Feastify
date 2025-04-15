@@ -9,7 +9,7 @@ import SoupMenu from '../../components/SoupMenu';
 
 const MyMenu = () => {
     return (
-        <div className='flex flex-col lg:gap-[55px]'>
+        <div className='flex flex-col gap-10 md:gap-[55px] px-3'>
             {/* hero section  */}
             <HeroMenu heroImg={menuBannerImg} size="800"></HeroMenu>
             {/* daily offer  */}

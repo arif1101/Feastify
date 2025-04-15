@@ -7,9 +7,9 @@ const SoupMenu = () => {
     const [menu] = useMenu()
     const soupMenu = menu.filter((item) => item.category === 'soup')
     return (
-        <div className='lg:flex flex-col lg:gap-[106px]'>
+        <div className='flex flex-col gap-10 lg:gap-[106px]f'>
             <HeroMenu title={'soup'} heroImg={soupHeroImg} size={'500'}></HeroMenu>
-            <Menu menu={soupMenu} title={'soup'} btnText={"ORDER YOUR FAVOURITE SOUP"}></Menu>
+            <Menu menu={soupMenu} title={'soup'} btnText={"FAVOURITE SOUP"}></Menu>
         </div>
     );
 };

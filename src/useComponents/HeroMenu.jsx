@@ -3,26 +3,27 @@ import React from 'react';
 const HeroMenu = ({heroImg, size, title}) => {
 
     const heightList = {
-        "full": "h-full",
-        "screen": "h-screen",
-        "800": "h-[800px]",
-        "500": "h-[500px]",
-        "600": "h-[600px]",
-        "700": "h-[700px]",
-    };
-    const heightClass = heightList[size] || "";
+        full: 'md:h-full',
+        screen: 'md:h-screen',
+        800: 'md:h-[800px]',
+        700: 'md:h-[700px]',
+        600: 'md:h-[600px]',
+        500: 'md:h-[500px]',
+      };
+    
+      const mdHeightClass = heightList[size] || '';
     
     return (
         <div
-        className={`hero ${heightClass}`}
+        className={`hero h-[300px] ${mdHeightClass} `}
         style={{
             backgroundImage: `url(${heroImg})`,
         }}>
             <div className="hero-overlay"></div>
-            <div className="hero-content text-neutral-content text-center">
-                <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">{title}</h1>
-                <p className="mb-5">
+            <div className="hero-content text-neutral-content text-center ">
+                <div className="max-w-md ">
+                <h1 className="mb-5 text-3xl md:text-5xl font-bold">{title}</h1>
+                <p className="text-[14px]">
                     Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                     quasi. In deleniti eaque aut repudiandae et a id nisi.
                 </p>
