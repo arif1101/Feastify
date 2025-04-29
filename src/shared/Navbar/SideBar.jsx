@@ -26,15 +26,23 @@ const SideBar = () => {
       {/* admin nav  */}
       <p className="flex gap-3 items-center">
         <HiHome className="w-[24px] h-[24px]" />
-        <NavLink to="/dashboard" onClick={closeDrawer}>ADMIN HOME</NavLink>
+        <NavLink to="/dashboard/adminHome" onClick={closeDrawer}>ADMIN HOME</NavLink>
       </p>
       <p className="flex gap-3 items-center">
         <MdAddCircle className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/addItem" onClick={closeDrawer}>ADD ITEMS</NavLink>
       </p>
       <p className="flex gap-3 items-center">
+        <MdAddBox className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/paymentHistory" onClick={closeDrawer}>PAYMENT HISTORY</NavLink>
+      </p>
+      <p className="flex gap-3 items-center">
         <FaCalendarCheck className="w-[24px] h-[24px]" />
         <NavLink to="/dashboard/users" onClick={closeDrawer}>MANAGE BOOKING</NavLink>
+      </p>
+      <p className="flex gap-3 items-center">
+        <FaShoppingCart className="w-[24px] h-[24px]" />
+        <NavLink to="/dashboard/myCart" onClick={closeDrawer}>MY CART</NavLink>
       </p>
       <p className="flex gap-3 items-center">
         <MdFastfood className="w-[24px] h-[24px]" />

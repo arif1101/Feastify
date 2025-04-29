@@ -20,6 +20,7 @@ import Payment from "../pages/Dashboard/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory";
 import UserHome from "../pages/Dashboard/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome";
+import UserRoute from "./UserRoute";
 
   const router = createBrowserRouter([
     {
@@ -63,7 +64,7 @@ import AdminHome from "../pages/Dashboard/AdminHome";
       children: [
         {
           path: '/dashboard/userHome',
-          element: <UserHome></UserHome>
+          element: <UserRoute><UserHome></UserHome></UserRoute>
         },
         {
           path: '/dashboard/myCart',
@@ -97,7 +98,7 @@ import AdminHome from "../pages/Dashboard/AdminHome";
         {
           path: '/dashboard/updateItem/:id',
           element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+          loader: ({params}) => fetch(`https://feastify-server.vercel.app/menu/${params.id}`)
         }
       ]
     }

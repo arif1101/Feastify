@@ -11,6 +11,7 @@ const MyCart = () => {
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   const axiosSecure = useAxiosSecure()
 
+
   const handleDelete = (id) => {
     console.log(id)
     Swal.fire({
@@ -80,7 +81,7 @@ const MyCart = () => {
               <td className="p-2 border text-center flex justify-around items-center">
                 <p>{index+1}</p>
                 <img
-                  src={item.image}
+                  src={item.photoURL}
                   className="w-12 h-12 rounded-md object-cover"
                 />
               </td>
