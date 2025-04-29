@@ -68,11 +68,11 @@ export default function LoginWithCaptcha() {
 
 
   return (
-    <div className='bg-[url("/others/authentication.png")] w-screen fixed overflow-y-scroll left-0 h-screen flex items-center justify-center'>
+    <div className='bg-[url("/others/authentication.png")] w-screen fixed overflow-y-scroll left-0 h-screen md:flex items-center justify-center px-3'>
       <div>
-        <img className='max-w-[648px] lg:w-[648px]' src={bg_login_img} alt="Login Background" />
+        <img className='md:max-w-[648px] md:w-[648px]' src={bg_login_img} alt="Login Background" />
       </div>
-      <form onSubmit={handleLogin} className="w-[536px] p-6 shadow-xl rounded-lg flex flex-col items-center justify-around">
+      <form onSubmit={handleLogin} className="max-w-[536px] md:w-full p-6 shadow-xl rounded-lg flex flex-col items-center justify-around">
         <label className="mr-auto text-lg font-semibold">Email</label>
         <input
         name="email"
@@ -96,7 +96,7 @@ export default function LoginWithCaptcha() {
           type="text"
           value={captcha}
           readOnly
-          className="w-full p-3 border rounded text-lg bg-gray-200 text-center font-bold mb-3"
+          className="w-full p-3 border rounded text-lg bg-gray-200 text-center font-bold mb-3 outline-none"
         />
         <input
           type="text"

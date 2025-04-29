@@ -29,7 +29,7 @@ const AdminHome = () => {
     }
   });
 
-  const {data: chartData = {}} = useQuery({
+  const {data: chartData = []} = useQuery({
     queryKey: ['order-stats'],
     queryFn: async () => {
       const res = await axiosSecure.get('/order-stats');
@@ -61,7 +61,7 @@ const AdminHome = () => {
 
   // custom pichart 
   const RADIAN = Math.PI / 180;
-  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);

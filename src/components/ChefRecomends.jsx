@@ -14,7 +14,7 @@ const ChefRecomends = () => {
     }, [])
 
     return (
-        <div className='mt-10 md:mt-[130px] '>
+        <div className='mt-10 md:mt-[100px] '>
             <div className='flex flex-col items-center gap-5 lg:mt-20 md:mb-[48px]'>
                 <SectionTitle title={'CHEF RECOMMENDS'} subTitle={'---Should Try---'}></SectionTitle>
             </div>

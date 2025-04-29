@@ -8,8 +8,8 @@ const AdminRoute = ({children}) => {
     const [isAdmin, isLoading] = useAdmin()
     const location = useLocation();
 
-    if(loading || isLoading){
-        return <span className='loading loading-dots loading-lg'></span>
+    if(loading || isLoading || !user){
+        return <span className="loading loading-bars loading-xl mx-auto"></span>
     }
     if(user && isAdmin){
         return children
