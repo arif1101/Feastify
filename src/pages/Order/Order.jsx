@@ -11,14 +11,14 @@ const Order = () => {
   const categories = ["salad", "pizza", "soup", "dessert", "drink"];
   const {category} = useParams();
   const initialIndex = categories.indexOf(category)
-    const [tabIndex, setTabIndex] = useState(initialIndex);
-    const [menu] = useMenu()
+  const [tabIndex, setTabIndex] = useState(initialIndex);
+  const [menu] = useMenu()
 
-    const saladMenu = menu.filter((item) => item.category==='salad')
-    const pizzaMenu = menu.filter((item) => item.category==='pizza')
-    const soupMenu = menu.filter((item) => item.category==='soup')
-    const dessertMenu = menu.filter((item) => item.category==='dessert')
-    const drinkMenu = menu.filter((item) => item.category==='drinks')
+  const saladMenu = menu.filter((item) => item.category==='salad')
+  const pizzaMenu = menu.filter((item) => item.category==='pizza')
+  const soupMenu = menu.filter((item) => item.category==='soup')
+  const dessertMenu = menu.filter((item) => item.category==='dessert')
+  const drinkMenu = menu.filter((item) => item.category==='drinks')
     
     return (
         <div className='flex px-3 flex-col gap-[130px]'>

@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {Link, NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 import useCart from '../../useComponents/useCart';
+import axios from 'axios';
 
 const Navbar = () => {
     const [cart] = useCart()
     const navigate = useNavigate()
     const {user,logOutUser} = useContext(AuthContext)
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
-    const photoURL = user?.photoURL;
+    const userEmail = user?.email;
+    const [photoURL, setPhotoURL] = useState()
 
     const notify = () => 
         toast.success("Successfully logged out", {
@@ -24,6 +26,10 @@ const Navbar = () => {
             color: "red",           // White text
           }
     });
+
+    axios.get(`https://feastify-server.vercel.app/user?email=${userEmail}`)
+    .then(res => console.log("User from DB:", setPhotoURL(res.data.photoURL)))
+    .catch(err => console.error("error: ", err));
     
     const handleLogOut = () => {
         logOutUser()

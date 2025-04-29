@@ -6,7 +6,7 @@ const UserHome = () => {
     
     console.log(userPhotoURL)
     return (
-        <div className="p-4 space-y-4">
+        <div className="p-4 space-y-4 max-w-[1080px] w-full mx-auto mt-10">
         <h2 className="text-xl font-semibold">Hi. Welcome Back!</h2>
 
         {/* Top Cards */}
@@ -34,7 +34,7 @@ const UserHome = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Profile Box */}
             <div className="bg-orange-100 p-6 rounded-xl text-center">
-            <div className="w-24 h-24 mx-auto rounded-full border-4 border-blue-400"><img src={user.photoURL} alt="" /></div>
+            <div className="w-24 h-24 mx-auto rounded-full border-4 border-blue-400 overflow-hidden"><img className='w-full h-full object-cover' src={user.photoURL} alt="" /></div>
             <div className="mt-4 font-semibold text-lg">{user.displayName}</div>
             </div>
 
